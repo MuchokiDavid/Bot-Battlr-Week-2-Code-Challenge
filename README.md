@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+# Bot Battlr - React Application Code Challenge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Welcome
 
-## Available Scripts
+Welcome to **Bot Battlr**, the ultimate destination in the known universe for building your personalized Bot Army! As a galactic web developer, you've been commissioned by a powerful overlord to create a web app that allows them to explore a catalog of robots, view detailed information about each robot, and enlist them into their formidable army.
 
-In the project directory, you can run:
+## Instructions
 
-### `npm start`
+For this code challenge, you will be building a React application that interacts with a local server running a JSON DB. Your goal is to follow the instructions provided below and showcase your ability to implement the features while demonstrating a clear understanding of the given requirements.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Requirements
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. **Well-Written README File**: You are required to provide a comprehensive README file that details the setup, features, and any other relevant information about your project.
 
-### `npm test`
+2. **Fetch Data from Local Server**: Utilize a local server running a JSON DB to fetch data for your application. Instructions for setting up the server are provided below.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Project Setup
 
-### `npm run build`
+Follow these steps to set up your project:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Create a new project folder.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Create a new private GitHub repository. Ensure that your TM (Teaching Mentor) is added as a contributor for grading purposes. Rest assured, your code is secure.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Regularly commit your changes to the repository to track your progress.
 
-### `npm run eject`
+4. In your project directory, create a `db.json` file and use the provided [data](#) for your server DB.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+5. Run the following command to start the backend server:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   ```bash
+   json-server --watch db.json
+    ```
+6. Test your server by visiting this route in the browser:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    ```bash
+    http://localhost:3000/bots
+    ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Getting Started
 
-## Learn More
+Before diving into coding, take the time to plan your application. Consider the user interface, layout, and overall structure. Here are some steps to guide you:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Ideation: Consider the features you need to implement and visualize how they will appear in your app.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. Planning: Plan the layout of your application, decide on the user interface elements, and ensure a smooth user experience.
 
-### Code Splitting
+## Licence
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+The project is licenced under the MIT license standards
 
-### Analyzing the Bundle Size
+## Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- David Munuhe

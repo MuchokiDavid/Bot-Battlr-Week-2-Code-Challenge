@@ -21,10 +21,11 @@ function App() {
 
   return (
     <div className="App">
-      <h1>React Week 2 challenge</h1>
+      <h1>React Week 2 Code challenge</h1>
       <Menubar/>
       <Routes>
-        <Route path='/' element={<Home bots= {bots}/>}></Route>
+        <Route path='/' element={<Home/>}></Route>
+        <Route path='/home' element={<Home bots= {bots}/>}></Route>
         <Route path='/form' element={<Form/>}></Route>
         <Route path='/about' element={<About/>}></Route>
       </Routes>

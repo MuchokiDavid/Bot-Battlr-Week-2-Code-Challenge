@@ -12,13 +12,12 @@ function Menubar() {
     <div>
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-      <Navbar.Brand href="/home">Bot Battlr</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto ">
-            <NavLink to="/home">Home</NavLink>
-            <NavLink to="/form">Form</NavLink>
-            <NavLink to="/about">About</NavLink>
+            <NavLink to="/home">Home</NavLink> |
+            <NavLink to="/form">Form</NavLink> |
+            <NavLink to="/about">About</NavLink> |
           </Nav>
         </Navbar.Collapse>
       </Container>

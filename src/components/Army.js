@@ -43,7 +43,7 @@ function Army() {
     }) 
   return (
     <div className='bg-red-100'>
-    <h3>Chosen Army</h3>
+    <h3 className='bg-white'>Chosen Army</h3>
         <Row>
           {cards}
         </Row>

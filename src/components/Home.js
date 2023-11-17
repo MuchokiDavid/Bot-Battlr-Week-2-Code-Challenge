@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
@@ -11,8 +11,21 @@ import { FaPersonMilitaryRifle } from "react-icons/fa6";
 
 
 
-function Home({bots, updateBots}) {
+function Home() {
     // console.log(bots)
+    const [bots, setBots] = useState([]);
+    const [army, setArmy] = useState([]);
+
+    //fetch data from endpoints
+    useEffect(() => {
+      fetch('http://localhost:3000/bots')
+        .then(response => response.json())
+        .then(data => setBots(data));
+  
+      fetch('http://localhost:3000/army')
+        .then(response => response.json())
+        .then(data => setArmy(data));
+    }, []);
 
     //Card to hold the whole bot army
     const cards= bots.map((bot)=> {
@@ -60,7 +73,7 @@ function Home({bots, updateBots}) {
 
   return (
     <div className='mt-4'>
-        <h3>Bot Army</h3>
+        <h3 >Bot Army</h3>
         <Row>
           {cards}
         </Row>

@@ -6,7 +6,7 @@ function Menubar() {
   return (
     <div>
       <nav className= "h-10 bg-green-600 ">
-      <h1 className='text-white text-justify font-bold text-2xl'>Bor battlr</h1>
+      <h1 className='text-white text-justify font-bold text-2xl'>Bot battle</h1>
       </nav>
     </div>
 

@@ -30,23 +30,29 @@ function Home() {
     //Card to hold the whole bot army
     const cards= bots.map((bot)=> {
       return (
-          <Col key={bot.id} xs={12} sm={6} md={4} lg={3} xl={2}>
-            <Card onClick={handleClickDelete}>
+          <Col key={bot.id} xs={12} sm={6} md={4} lg={3} xl={2} onClick={()=> handleClickDelete(bot)}>
+            <Card >
               <Card.Img src={bot.avatar_url} />
               <Card.Body>
+                <Card.Text>
+                  {bot.name}
+                </Card.Text>
+                <Card.Text>
+                  {bot.bot_class}
+                </Card.Text>
                 <Card.Text>
                   {bot.catchphrase}
                 </Card.Text>
                 <Card.Text>
-                  <div className="icon-value">
+                  <p className="icon-value">
                     {bot.health > 0 ? <FaHeart /> : <FaHeartBroken />} {bot.health}
-                  </div>
-                  <div className="icon-value">
+                  </p>
+                  <p className="icon-value">
                     {bot.damage > 0 ? <FaHeartBroken />: <FaHeart /> } {bot.damage}
-                  </div>
-                  <div className="icon-value">
+                  </p>
+                  <p className="icon-value">
                     {bot.armor > 0 ? <FaPersonMilitaryRifle /> : <FaHeartBroken />} {bot.armor}
-                  </div>
+                  </p>
                 </Card.Text>
                 </Card.Body>
             </Card>
@@ -54,29 +60,76 @@ function Home() {
       )
   }) 
 
-  function handleClickDelete(bot){
-    const updatedBots = bots.filter((b) => b.id !== bot.id);
+  const armyCard= army.map((bot)=> {
+    return (
+        <Col key={bot.id} xs={12} sm={6} md={4} lg={3} xl={2}>
+          <Card >
+            <Card.Img src={bot.avatar_url} />
+            <Card.Body>
+              <Card.Text>
+                {bot.name}
+              </Card.Text>
+              <Card.Text>
+                {bot.bot_class}
+              </Card.Text>
+              <Card.Text>
+                {bot.catchphrase}
+              </Card.Text>
+              <Card.Text>
+                <div className="icon-value">
+                  {bot.health > 0 ? <FaHeart /> : <FaHeartBroken />} {bot.health}
+                </div>
+                <div className="icon-value">
+                  {bot.damage > 0 ? <FaHeartBroken />: <FaHeart /> } {bot.damage}
+                </div>
+                <div className="icon-value">
+                  {bot.armor > 0 ? <FaPersonMilitaryRifle /> : <FaHeartBroken />} {bot.armor}
+                </div>
+              </Card.Text>
+              </Card.Body>
+          </Card>
+        </Col>
+    )
+}) 
 
-    //Update the state
-
-    fetch(`http://localhost:3000/bots/${bot.id}`,{
+  function handleClickDelete(clickedBot){
+    fetch(`http://localhost:3000/bots/${clickedBot.id}`, {
       method: 'DELETE',
-      headers: {
-        'Content-Type': 'application/json',
-        // Add any additional headers as needed
-      },
     })
-    .then((res)=> res.json())
-    .then((data)=>console.log(data))
-    .catch(error=>error)
+      .then(response => response.json())
+      .then(deletedBot => {
+        // Add the deleted bot to Army
+        fetch('http://localhost:3000/army', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(deletedBot),
+        })
+          .then(response => response.json())
+          .then(addedBot => {
+            // Update state to reflect the changes in Bots and Army
+            setBots(bots.filter(bot => bot.id !== clickedBot.id));
+            setArmy([...army, addedBot]);
+          });
+      });
   }
 
   return (
     <div className='mt-4'>
+      <div className='bg-red-100 mb-5'>
+        <h3 className='bg-white'>Chosen Army</h3>
+            <Row>
+              {armyCard}
+            </Row>
+      </div>
+      <div >
         <h3 >Bot Army</h3>
         <Row>
           {cards}
         </Row>
+      </div>
+        
           
         
     </div>

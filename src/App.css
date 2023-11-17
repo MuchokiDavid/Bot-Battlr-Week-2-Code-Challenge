@@ -39,7 +39,7 @@
 .icon-value {
   display: flex;
   align-items: center; /* Align items vertically in the center */
-  margin-bottom: 8px; /* Adjust as needed for spacing between icon-value pairs */
+  margin-bottom: 3px; /* Adjust as needed for spacing between icon-value pairs */
 }
 
 .icon-value svg {

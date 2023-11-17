@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+.icon-value {
+  display: flex;
+  align-items: center; /* Align items vertically in the center */
+  margin-bottom: 8px; /* Adjust as needed for spacing between icon-value pairs */
+}
+
+.icon-value svg {
+  margin-right: 4px; /* Adjust as needed for spacing between icon and value */
+}

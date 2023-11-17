@@ -7,6 +7,9 @@ import Home from './components/Home';
 function App() {
 
   const [bots, setBots]= useState([])
+  const updateBots = (newBot) => {
+    setBots([...bots,newBot]);
+  };
 
   //fetch data
   useEffect(()=> {
@@ -19,7 +22,7 @@ function App() {
   return (
     <div className="App bg-slate-100">
       <Menubar/>
-      <Home bots= {bots}/>
+      <Home bots= {bots} updateBots={updateBots}/>
     </div>
   );
 }

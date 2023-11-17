@@ -7,8 +7,7 @@ import Col from 'react-bootstrap/Col';
 import { FaHeart } from "react-icons/fa";
 import { FaHeartBroken } from "react-icons/fa";
 import { FaPersonMilitaryRifle } from "react-icons/fa6";
-
-
+import { BsFillLightningFill } from "react-icons/bs";
 
 
 function Home() {
@@ -35,17 +34,17 @@ function Home() {
               <Card.Img src={bot.avatar_url} />
               <Card.Body>
                 <Card.Text>
-                  {bot.name}
+                 Name: {bot.name}
                 </Card.Text>
                 <Card.Text>
-                  {bot.bot_class}
+                Class: {bot.bot_class}
                 </Card.Text>
                 <Card.Text>
                   <div className="icon-value">
                     {bot.health > 0 ? <FaHeart /> : <FaHeartBroken />} {bot.health}
                   </div>
                   <div className="icon-value">
-                    {bot.damage > 0 ? <FaHeartBroken />: <FaHeart /> } {bot.damage}
+                    {bot.damage > 0 ? <BsFillLightningFill />: <FaHeartBroken /> } {bot.damage}
                   </div>
                   <div className="icon-value">
                     {bot.armor > 0 ? <FaPersonMilitaryRifle /> : <FaHeartBroken />} {bot.armor}
@@ -64,10 +63,10 @@ function Home() {
             <Card.Img src={bot.avatar_url} />
             <Card.Body>
               <Card.Text>
-                {bot.name}
+              Name: {bot.name}
               </Card.Text>
               <Card.Text>
-                {bot.bot_class}
+                Class: {bot.bot_class}
               </Card.Text>
               <Card.Text>
                 <div className="icon-value">
@@ -92,6 +91,7 @@ function Home() {
     })
       .then(response => response.json())
       .then(deletedBot => {
+        console.log(deletedBot)
         // Add the deleted bot to Army
         fetch('http://localhost:3000/army', {
           method: 'POST',
@@ -111,7 +111,7 @@ function Home() {
 
   return (
     <div className='mt-4'>
-      <div className='bg-red-100 mb-5'>
+      <div className='bg-green-200 mb-5'>
         <h3 className='bg-white'>Chosen Army</h3>
             <Row>
               {armyCard}

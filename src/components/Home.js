@@ -73,7 +73,7 @@ function Home() {
                   {bot.health > 0 ? <FaHeart /> : <FaHeartBroken />} {bot.health}
                 </div>
                 <div className="icon-value">
-                  {bot.damage > 0 ? <FaHeartBroken />: <FaHeart /> } {bot.damage}
+                  {bot.damage > 0 ? <BsFillLightningFill />: <FaHeartBroken /> } {bot.damage}
                 </div>
                 <div className="icon-value">
                   {bot.armor > 0 ? <FaPersonMilitaryRifle /> : <FaHeartBroken />} {bot.armor}
@@ -89,22 +89,35 @@ function Home() {
     fetch(`http://localhost:3000/bots/${clickedBot.id}`, {
       method: 'DELETE',
     })
-      .then(response => response.json())
-      .then(deletedBot => {
-        console.log(deletedBot)
+      .then(response =>{
+        const formattedBot = {
+          name: clickedBot.name,
+          health: clickedBot.health,
+          damage: clickedBot.damage,
+          armor: clickedBot.armor,
+          bot_class: clickedBot.bot_class,
+          catchphrase: clickedBot.catchphrase,
+          avatar_url: clickedBot.avatar_url,
+          created_at: clickedBot.created_at,
+          updated_at: clickedBot.updated_at,
+        }; 
+      // .then(deletedBot => {
+        // console.log(deletedBot)
+        
         // Add the deleted bot to Army
         fetch('http://localhost:3000/army', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify(deletedBot),
+          body: JSON.stringify(formattedBot),
         })
           .then(response => response.json())
           .then(addedBot => {
             // Update state to reflect the changes in Bots and Army
             setBots(bots.filter(bot => bot.id !== clickedBot.id));
-            setArmy([...army, addedBot]);
+            setArmy(prevArmy=> [...prevArmy.filter(bot => bot.id !== clickedBot.id), addedBot]);
+            // setArmy(prevArmy=> [...prevArmy.filter(bot => bot.id !== clickedBot.id),addededBot]);
           });
       });
   }

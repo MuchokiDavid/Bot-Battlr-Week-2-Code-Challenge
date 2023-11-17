@@ -91,6 +91,7 @@ function Home() {
     })
       .then(response =>{
         const formattedBot = {
+          id: clickedBot.id,
           name: clickedBot.name,
           health: clickedBot.health,
           damage: clickedBot.damage,

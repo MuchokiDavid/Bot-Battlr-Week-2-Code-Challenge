@@ -59,7 +59,7 @@ function Home({bots, updateBots}) {
   }
 
   return (
-    <div>
+    <div className='mt-4'>
         <h3>Bot Army</h3>
         <Row>
           {cards}

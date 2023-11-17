@@ -41,18 +41,15 @@ function Home() {
                   {bot.bot_class}
                 </Card.Text>
                 <Card.Text>
-                  {bot.catchphrase}
-                </Card.Text>
-                <Card.Text>
-                  <p className="icon-value">
+                  <div className="icon-value">
                     {bot.health > 0 ? <FaHeart /> : <FaHeartBroken />} {bot.health}
-                  </p>
-                  <p className="icon-value">
+                  </div>
+                  <div className="icon-value">
                     {bot.damage > 0 ? <FaHeartBroken />: <FaHeart /> } {bot.damage}
-                  </p>
-                  <p className="icon-value">
+                  </div>
+                  <div className="icon-value">
                     {bot.armor > 0 ? <FaPersonMilitaryRifle /> : <FaHeartBroken />} {bot.armor}
-                  </p>
+                  </div>
                 </Card.Text>
                 </Card.Body>
             </Card>
@@ -71,9 +68,6 @@ function Home() {
               </Card.Text>
               <Card.Text>
                 {bot.bot_class}
-              </Card.Text>
-              <Card.Text>
-                {bot.catchphrase}
               </Card.Text>
               <Card.Text>
                 <div className="icon-value">

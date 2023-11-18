@@ -58,7 +58,7 @@ function Home() {
 
   const armyCard= army.map((bot)=> {
     return (
-        <Col key={bot.id} xs={12} sm={6} md={4} lg={3} xl={2}>
+        <Col key={bot.id} xs={12} sm={6} md={4} lg={3} xl={2}onClick={()=> handleArmyDlete(bot)}>
           <Card >
             <Card.Img src={bot.avatar_url} />
             <Card.Body>
@@ -122,14 +122,52 @@ function Home() {
           });
       });
   }
+  //function to handle delete army
+  function handleArmyDlete(clickedBot){
+    fetch(`http://localhost:3000/army/${clickedBot.id}`, {
+      method: 'DELETE',
+    })
+      .then(response =>{
+        const formattedBot = {
+          id: clickedBot.id,
+          name: clickedBot.name,
+          health: clickedBot.health,
+          damage: clickedBot.damage,
+          armor: clickedBot.armor,
+          bot_class: clickedBot.bot_class,
+          catchphrase: clickedBot.catchphrase,
+          avatar_url: clickedBot.avatar_url,
+          created_at: clickedBot.created_at,
+          updated_at: clickedBot.updated_at,
+        }; 
+      // .then(deletedBot => {
+        // console.log(deletedBot)
+        
+        // Add the deleted bot to Army
+        fetch('http://localhost:3000/bots', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formattedBot),
+        })
+          .then(response => response.json())
+          .then(addedBot => {
+            // Update state to reflect the changes in Bots and Army
+            setArmy(prevArmy => prevArmy.filter(bot => bot.id !== clickedBot.id));
+            setBots(prevBots => [...prevBots, addedBot]);
+            // setArmy(prevArmy=> [...prevArmy.filter(bot => bot.id !== clickedBot.id),addededBot]);
+          });
+      });
+  }
 
   return (
     <div className='mt-4'>
       <div className='bg-green-200 mb-5'>
         <h3 className='bg-white'>Chosen Army</h3>
-            <Row>
-              {armyCard}
-            </Row>
+        <Row>
+          {armyCard}
+        </Row>
       </div>
       <div >
         <h3 >Bot Army</h3>

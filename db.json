@@ -25,30 +25,6 @@
       "updated_at": "2018-10-02T19:55:10.856Z"
     },
     {
-      "id": 105,
-      "name": "G`t-65",
-      "health": 62,
-      "damage": 98,
-      "armor": 31,
-      "bot_class": "Assault",
-      "catchphrase": "010101111110111111101101010110010100101",
-      "avatar_url": "https://robohash.org/nisinequequas.png?size=300x300&set=set1",
-      "created_at": "2018-10-02T19:55:10.867Z",
-      "updated_at": "2018-10-02T19:55:10.867Z"
-    },
-    {
-      "id": 106,
-      "name": "TI-09",
-      "health": 81,
-      "damage": 39,
-      "armor": 52,
-      "bot_class": "Support",
-      "catchphrase": "00111100111001011111110010110111",
-      "avatar_url": "https://robohash.org/etutprovident.png?size=300x300&set=set1",
-      "created_at": "2018-10-02T19:55:10.887Z",
-      "updated_at": "2018-10-02T19:55:10.887Z"
-    },
-    {
       "id": 107,
       "name": "XSf-63",
       "health": 97,
@@ -59,18 +35,6 @@
       "avatar_url": "https://robohash.org/accusantiumetfacilis.png?size=300x300&set=set1",
       "created_at": "2018-10-02T19:55:10.899Z",
       "updated_at": "2018-10-02T19:55:10.899Z"
-    },
-    {
-      "id": 108,
-      "name": "m-76",
-      "health": 65,
-      "damage": 90,
-      "armor": 38,
-      "bot_class": "Assault",
-      "catchphrase": "1101111100001011111011011001011110010000",
-      "avatar_url": "https://robohash.org/blanditiisautlaudantium.png?size=300x300&set=set1",
-      "created_at": "2018-10-02T19:55:10.915Z",
-      "updated_at": "2018-10-02T19:55:10.915Z"
     },
     {
       "id": 109,
@@ -323,18 +287,6 @@
       "avatar_url": "https://robohash.org/beataequisaut.png?size=300x300&set=set1",
       "created_at": "2018-10-02T19:55:11.387Z",
       "updated_at": "2018-10-02T19:55:11.387Z"
-    },
-    {
-      "id": 130,
-      "name": "Qz-38",
-      "health": 63,
-      "damage": 99,
-      "armor": 23,
-      "bot_class": "Assault",
-      "catchphrase": "01111111011110101100110110111000101111010",
-      "avatar_url": "https://robohash.org/repellendusasperioresdolor.png?size=300x300&set=set1",
-      "created_at": "2018-10-02T19:55:11.439Z",
-      "updated_at": "2018-10-02T19:55:11.439Z"
     },
     {
       "id": 131,
@@ -1163,21 +1115,45 @@
       "avatar_url": "https://robohash.org/teneturquaereiciendis.png?size=300x300&set=set1",
       "created_at": "2018-10-02T19:55:12.537Z",
       "updated_at": "2018-10-02T19:55:12.537Z"
+    },
+    {
+      "id": 130,
+      "name": "Qz-38",
+      "health": 63,
+      "damage": 99,
+      "armor": 23,
+      "bot_class": "Assault",
+      "catchphrase": "01111111011110101100110110111000101111010",
+      "avatar_url": "https://robohash.org/repellendusasperioresdolor.png?size=300x300&set=set1",
+      "created_at": "2018-10-02T19:55:11.439Z",
+      "updated_at": "2018-10-02T19:55:11.439Z"
+    },
+    {
+      "id": 106,
+      "name": "TI-09",
+      "health": 81,
+      "damage": 39,
+      "armor": 52,
+      "bot_class": "Support",
+      "catchphrase": "00111100111001011111110010110111",
+      "avatar_url": "https://robohash.org/etutprovident.png?size=300x300&set=set1",
+      "created_at": "2018-10-02T19:55:10.887Z",
+      "updated_at": "2018-10-02T19:55:10.887Z"
+    },
+    {
+      "id": 108,
+      "name": "m-76",
+      "health": 65,
+      "damage": 90,
+      "armor": 38,
+      "bot_class": "Assault",
+      "catchphrase": "1101111100001011111011011001011110010000",
+      "avatar_url": "https://robohash.org/blanditiisautlaudantium.png?size=300x300&set=set1",
+      "created_at": "2018-10-02T19:55:10.915Z",
+      "updated_at": "2018-10-02T19:55:10.915Z"
     }
   ],
   "army": [
-    {
-      "id": 1,
-      "name": "fb-83",
-      "health": 88,
-      "damage": 38,
-      "armor": 68,
-      "bot_class": "Captain",
-      "catchphrase": "0111100000101111011000110101110111110000",
-      "avatar_url": "https://robohash.org/teneturquaereiciendis.png?size=300x300&set=set1",
-      "created_at": "2018-10-02T19:55:12.537Z",
-      "updated_at": "2018-10-02T19:55:12.537Z"
-    },
     {
       "id": 103,
       "name": "P-24",
@@ -1189,6 +1165,18 @@
       "avatar_url": "https://robohash.org/idetcumque.png?size=300x300&set=set1",
       "created_at": "2018-10-02T19:55:10.844Z",
       "updated_at": "2018-10-02T19:55:10.844Z"
+    },
+    {
+      "id": 105,
+      "name": "G`t-65",
+      "health": 62,
+      "damage": 98,
+      "armor": 31,
+      "bot_class": "Assault",
+      "catchphrase": "010101111110111111101101010110010100101",
+      "avatar_url": "https://robohash.org/nisinequequas.png?size=300x300&set=set1",
+      "created_at": "2018-10-02T19:55:10.867Z",
+      "updated_at": "2018-10-02T19:55:10.867Z"
     }
   ]
 }

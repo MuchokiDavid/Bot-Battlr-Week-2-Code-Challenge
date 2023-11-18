@@ -17,11 +17,11 @@ function Home() {
 
     //fetch data from endpoints
     useEffect(() => {
-      fetch('http://localhost:3000/bots')
+      fetch('https://bot-battlr-m6mu.onrender.com/bots')
         .then(response => response.json())
         .then(data => setBots(data));
   
-      fetch('http://localhost:3000/army')
+      fetch('https://bot-battlr-m6mu.onrender.com/army')
         .then(response => response.json())
         .then(data => setArmy(data));
     }, []);
@@ -86,7 +86,7 @@ function Home() {
 }) 
 
   function handleClickDelete(clickedBot){
-    fetch(`http://localhost:3000/bots/${clickedBot.id}`, {
+    fetch(`https://bot-battlr-m6mu.onrender.com/bots/${clickedBot.id}`, {
       method: 'DELETE',
     })
       .then(response =>{
@@ -106,7 +106,7 @@ function Home() {
         // console.log(deletedBot)
         
         // Add the deleted bot to Army
-        fetch('http://localhost:3000/army', {
+        fetch('https://bot-battlr-m6mu.onrender.com/army', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -124,7 +124,7 @@ function Home() {
   }
   //function to handle delete army
   function handleArmyDlete(clickedBot){
-    fetch(`http://localhost:3000/army/${clickedBot.id}`, {
+    fetch(`https://bot-battlr-m6mu.onrender.com/army/${clickedBot.id}`, {
       method: 'DELETE',
     })
       .then(response =>{
@@ -144,7 +144,7 @@ function Home() {
         // console.log(deletedBot)
         
         // Add the deleted bot to Army
-        fetch('http://localhost:3000/bots', {
+        fetch('https://bot-battlr-m6mu.onrender.com/bots', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

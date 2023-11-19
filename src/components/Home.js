@@ -85,8 +85,8 @@ function Home() {
     )
 }) 
 
-  function handleClickDelete(clickedBot){
-    fetch(`https://bot-battlr-m6mu.onrender.com/bots/${clickedBot.id}`, {
+  async function handleClickDelete(clickedBot){
+    await fetch(`https://bot-battlr-m6mu.onrender.com/bots/${clickedBot.id}`, {
       method: 'DELETE',
     })
       .then(response =>{
@@ -106,7 +106,7 @@ function Home() {
         // console.log(deletedBot)
         
         // Add the deleted bot to Army
-        fetch('https://bot-battlr-m6mu.onrender.com/army', {
+       fetch('https://bot-battlr-m6mu.onrender.com/army', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -123,8 +123,8 @@ function Home() {
       });
   }
   //function to handle delete army
-  function handleArmyDlete(clickedBot){
-    fetch(`https://bot-battlr-m6mu.onrender.com/army/${clickedBot.id}`, {
+  async function handleArmyDlete(clickedBot){
+    await fetch(`https://bot-battlr-m6mu.onrender.com/army/${clickedBot.id}`, {
       method: 'DELETE',
     })
       .then(response =>{
@@ -163,7 +163,7 @@ function Home() {
 
   return (
     <div className='mt-4'>
-      <div className='bg-green-200 mb-5'>
+      <div className='bg-green-300 mb-5'>
         <h3 className='bg-white'>Chosen Army</h3>
         <Row>
           {armyCard}
